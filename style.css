@@ -1,0 +1,36 @@
+@media screen and (max-width:600px) {
+    body{
+        background-color: red;
+        width: 100%;
+        font-size: 0.8rem;
+        text-align: center;
+        margin: 0 auto;
+        border: none;
+        
+    }
+    h2{
+        font-size: 18px;
+        width: 100%;
+        font-weight: bold;
+    }
+    #inputNome{
+        width: 60%;
+        height: 60px;
+
+    }
+    button{
+        height: 60px;
+        
+
+    }
+    #atualiza{
+        width: 60%;
+        height: 60px;
+        
+    }
+    footer{
+        font-size: 8px;
+        width: 100%;
+    }
+    
+}

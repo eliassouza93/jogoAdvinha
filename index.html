@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: blue;
+            background-repeat: no-repeat;
+            font-size: 21px;
+            text-align: center;
+            text-transform: uppercase;
+            border: 3px solid black;
+            border-bottom: 3px solid black;
+            height: 98vh;
+            width: 700px;
+            margin: 10px auto;
+            border-radius: 5px;
+            color: rgb(0, 255, 55); ;
+            font-weight: bold;
+        }
+        h2{
+         
+            font-family: cursive;
+            text-decoration: underline;
+            font-weight: bold;
+            background-color: black;
+            width: 700px;
+            color: rgb(0, 255, 55); ;
+            margin-top: 0;
+        }
+        #inputNome {
+            width: 100px;
+            height: 30px;
+            border: none;
+            border-radius: 2px 2px 2px ;
+            margin: 0 auto;
+            font-size: 21px;
+            text-align: center;
+            
+
+        }
+        button {
+            width: 100px;
+            height: 35px;
+            margin: 0 auto;
+            border: none;
+            border-radius: 3px;
+            background-color: blue;
+            font-size: 15px;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+         
+
+        }
+        button:hover{
+            background-color: rgb(0, 255, 55); ;
+            color: black;
+            cursor: pointer;
+           
+
+        }
+        #atualiza {
+            width: 200px;
+            height: 34px;
+            margin: 0 auto;
+            border: none;
+            border-radius: 3px;
+            background-color: blue;
+            font-size: 15px;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        #atualiza:hover{
+            background-color: rgb(0, 255, 55); ;
+            color: black;
+            cursor: pointer;
+        }
+        footer{
+            position: absolute;
+	        bottom: 0;
+            font-size: 12px;
+            background-color: black;
+            color: white;
+            width: 700px;
+            
+            
+        }
+      
+
+        
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Jogo de Advinhação</h2>
+    <label for="inputNome">Digíte um número de 0 à 10</label>
+    <input type="tel" name="" id="inputNome">
+    <button>Comparar</button>
+    <p></p>
+    <br>
+    <input type="button" value="Atualizar Página" onClick="window.location.reload()" id="atualiza">
+    <footer>Jogo de Adivinhação criado por Elias Souza - todos os direitos reservados - 2022 &copy;</footer>
+
+    <script>
+      
+        let inputNome = document.querySelector("#inputNome")
+        let button = document.querySelector("button")
+        let br = document.querySelector("br")
+        let paragrafo = document.querySelector("p")
+        var segredo = Math.round(Math.random() * 10)
+        function adcElemento() {
+               
+                var divNova = document.createElement("div");
+                var conteudoNovo = document.createTextNode("Errou, tente novamente!");
+                divNova.appendChild(conteudoNovo); 
+
+             
+                var divAtual = document.getElementById("div1");
+                document.body.insertBefore(divNova, divAtual);
+            }
+            button.addEventListener('click', () => {
+            if (inputNome.value == segredo) {
+                paragrafo.textContent = 'Parabéns o segredo é: ' + inputNome.value
+                alert('Fim de Jogo ' + ' Parabéns o segredo é: ' + inputNome.value)
+                paragrafo.textContent = 'Por favor atualize à página'
+                
+
+            } else {
+                adcElemento()
+                
+            }
+            
+            inputNome.value = "";
+            inputNome.focus();
+            
+
+
+
+        })
+
+
+    </script>
+
+
+  
+</body>
+
+</html>
